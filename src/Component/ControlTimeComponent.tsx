@@ -7,7 +7,7 @@ function ControlTimeComponent(props:Props){
     const { setTimeInSeconds } = props;
     const [ intervalId, setIntervalId ] = useState<number>(0);
    
-    const handlePlayButton = () => {
+    const handlePlay = () => {
         let interval: any = setInterval(() =>{
         setTimeInSeconds((previousState: number) => previousState + 1);
     },1000);
@@ -18,23 +18,23 @@ function ControlTimeComponent(props:Props){
 
         console.log("number is ",setIntervalId(interval))
     }
-    const handleStopButton = () => {
+    const handleStop = () => {
         console.log("------I stopped" );
         clearInterval(intervalId);
     }
     
-    const handleResetButton = () => {
+    const handleReset = () => {
         clearInterval(intervalId);
-        setTimeInSeconds(0 + 0);
+        setTimeInSeconds(0);
         console.log("------Reset was successful");
 
     }
    
     return(
         <section >
-            <button onClick={handleStopButton} className="m-4 bg-red-500 px-6 py-3 text-white text-xl  cursor-pointer rounded">PAUSE</button>
-            <button onClick={handleResetButton} className="m-4 bg-blue-500 px-6 py-3 text-white text-xl cursor-pointer rounded">RESET</button>
-            <button onClick={handlePlayButton} className="m-4 bg-green-600 px-6 py-3 text-white text-xl cursor-pointer rounded">START</button>
+            <button onClick={handleStop} className="m-4 bg-red-500 px-6 py-3 text-white text-xl  cursor-pointer rounded">PAUSE</button>
+            <button onClick={handleReset} className="m-4 bg-blue-500 px-6 py-3 text-white text-xl cursor-pointer rounded">RESET</button>
+            <button onClick={handlePlay} className="m-4 bg-green-600 px-6 py-3 text-white text-xl cursor-pointer rounded">START</button>
 
         </section>
     )
