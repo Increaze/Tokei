@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import ControlTimeComponent from "./Component/Controls/ControlComponent";
-import CalculateTime from "./Component/Utils/CalculateTimer";
+import ControlTimeComponent from "./Component/ControlTimeComponent";
+import CalculateTime from "./Component/CalculateTimer";
 
 function App() {
   const [timeInSeconds, setTimeInSeconds] = useState<number>(0);
